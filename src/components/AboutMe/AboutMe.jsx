@@ -9,14 +9,14 @@ function AboutMe() {
         <h3 className="title about-me__title">Студент</h3>
         <div className="about-me__wrapper">
           <div className="about-me__description">
-            <p className="about-me__name">Станислав</p>
-            <p className="about-me__specialization">Фронтенд-разработчик, 24 года</p>
-            <p className="about-me__text">Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена
-              и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.
+            <p className="about-me__name">Илья</p>
+            <p className="about-me__specialization">Фронтенд-разработчик, 48 лет</p>
+            <p className="about-me__text">Я родился и живу в Самаре, имею два высших образования. Женат, двое детей.
+              Больше двадцати лет работаю дизайнером и верстальщиком полиграфии. Начинал работать в газете "Из рук в руки". Пошёл на курс веб разработки что бы верстать сайты.
             </p>
             <ul className="about-me__links">
-              <li><a className="about-me__link" href="https://stmelik.ru" target="_blank">Мой сайт</a></li>
-              <li><a className="about-me__link" href="https://github.com/StMelik" target="_blank">Github</a></li>
+              <li><a className="about-me__link" href="https://github.com/Ilya-Cherevko" target="_blank">Мой сайт</a></li>
+              <li><a className="about-me__link" href="https://github.com/Ilya-Cherevko" target="_blank">Github</a></li>
             </ul>
           </div>
           <img className="about-me__photo" src={photo} alt="Моё фото" />
