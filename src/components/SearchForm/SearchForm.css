@@ -9,8 +9,8 @@
     align-items: center;
     column-gap: 20px;
     position: relative;
-    background-color: #222222;
-    box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
+    background-color: white;
+    /*box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);*/
     border-radius: 9px;
     padding-left: 60px;
     padding-right: 30px;
@@ -73,12 +73,13 @@
 
 .from-search__checkbox {
     display: none;
+    z-index: 1;
 }
 
 .from-search__custom-checkbox {
     width: 36px;
     height: 20px;
-    background-color: #202020;
+    background-color: #2BE080;
     border-radius: 16px;
     padding: 2px;
 }
@@ -92,7 +93,7 @@
 }
 
 .from-search__checkbox:checked + .from-search__custom-checkbox .from-search__custom-mark {
-    background-color: #3ddc84;
+    background-color: #2BE080;
     transform: translateX(100%);
 }
 

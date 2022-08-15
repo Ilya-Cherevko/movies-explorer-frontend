@@ -19,10 +19,10 @@ function SearchForm({ isShort, setIsShort, searchQuery, setSearchQuery, searchFi
             checked={isShort}
             onChange={() => setIsShort(!isShort)}
           />
+          <p className="form-search__label-text">Короткометражки</p>
           <div className="from-search__custom-checkbox">
             <div className="from-search__custom-mark"></div>
           </div>
-          <p className="form-search__label-text">Короткометражки</p>
         </label>
       </form>
     </section>

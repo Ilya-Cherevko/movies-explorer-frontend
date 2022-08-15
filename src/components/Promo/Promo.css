@@ -22,6 +22,7 @@
     letter-spacing: calc(1em * -0.04);
     font-weight: 400;
     margin-bottom: 5%;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {

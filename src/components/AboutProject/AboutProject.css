@@ -42,14 +42,14 @@
 
 .project__progress-bar {
     padding: 9px 0;
-    background-color: #303030;
+    background-color: #E8E8E8;
     min-height: 36px;
     margin-bottom: 14px;
 }
 
 .project__progress-bar_color_green {
     color: #000000;
-    background-color: #3ddc84;
+    background-color: #2BE080;
 }
 
 .project__progress-title {

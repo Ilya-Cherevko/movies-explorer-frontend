@@ -15,7 +15,7 @@ function AboutMe() {
               Больше двадцати лет работаю дизайнером и верстальщиком полиграфии. Начинал работать в газете "Из рук в руки". Пошёл на курс веб разработки что бы верстать сайты.
             </p>
             <ul className="about-me__links">
-              <li><a className="about-me__link" href="https://github.com/Ilya-Cherevko" target="_blank">Мой сайт</a></li>
+              <li><a className="about-me__link" href="https://vk.com/id266103558" target="_blank">BK</a></li>
               <li><a className="about-me__link" href="https://github.com/Ilya-Cherevko" target="_blank">Github</a></li>
             </ul>
           </div>

@@ -22,12 +22,13 @@
     line-height: 16px;
     font-weight: 500;
     padding: 8px 20px;
+    color: #000000;
 }
 
 .header__button_color_green {
     color: #000000;
-    background-color: #3ddc84;
-    border-radius: 3px;
+    background-color: #F5F5F5;
+    border-radius: 20px;
 }
 
 .header__menu-button {
