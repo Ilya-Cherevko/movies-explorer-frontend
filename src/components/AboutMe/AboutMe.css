@@ -28,7 +28,7 @@
     margin-bottom: 18px;
 }
 
-.about-me__specialization {
+.about-me__speciality {
     font-size: 18px;
     line-height: 20px;
     font-weight: 500;
@@ -69,7 +69,7 @@
         margin-bottom: calc(18px + (16 - 18) * ((100vw - 768px) / (1280 - 768)));
     }
 
-    .about-me__specialization {
+    .about-me__speciality {
         font-size: calc(12px + (18 - 12) * ((100vw - 768px) / (1280 - 768)));
         line-height: calc(18px + (20 - 18) * ((100vw - 768px) / (1280 - 768)));
         margin-bottom: calc(20px + (26 - 20) * ((100vw - 768px) / (1280 - 768)));
@@ -109,7 +109,7 @@
         margin-bottom: calc(20px + (16 - 20) * ((100vw - 320px) / (768 - 320)));
     }
 
-    .about-me__specialization {
+    .about-me__speciality {
         font-size: calc(11px + (12 - 11) * ((100vw - 320px) / (768 - 320)));
         line-height: calc(16px + (18 - 16) * ((100vw - 320px) / (768 - 320)));
         margin-bottom: 20px;
