@@ -5,7 +5,6 @@ function ProfileButton() {
   return (
     <div className="profile-button">
       <Link className="profile-button__link" to='/profile'>Аккаунт</Link>
-      <div className="profile-button__photo"></div>
     </div>
   );
 }

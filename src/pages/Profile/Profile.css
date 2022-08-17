@@ -5,7 +5,7 @@
 }
 
 .profile__wrapper {
-    padding: 70px 0;
+    padding: 75px 0 70px 0;
     min-height: calc(100vh - 74px);
     display: flex;
     flex-direction: column;
@@ -67,7 +67,7 @@
 
 @media screen and (max-width: 1280px) {
     .profile__title {
-        margin-bottom: calc(95px + (120 - 95) * ((100vw - 768px) / (1280 - 768)));
+        margin-bottom: calc(10px + (120 - 95) * ((100vw - 768px) / (1280 - 768)));
     }
 
     .profile__form {

@@ -1,14 +1,13 @@
 .card-film {
-    border-radius: 6px;
     overflow: hidden;
 }
 
 .card-film__image {
-    height: 203px;
+    height: 151px;
 }
 
 .card-film__description {
-    padding: 16px;
+    padding: 14px;
 }
 
 .card-film__row {
@@ -16,7 +15,10 @@
     align-items: center;
     justify-content: space-between;
     height: 30px;
-    margin-bottom: 10px;
+    padding-bottom: 29px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-bottom: 1px solid #E8E8E8;
 }
 
 .card-film__name {
@@ -62,7 +64,7 @@
 
 @media screen and (max-width: 1280px) {
     .card-film__image {
-        height: calc(190px + (203 - 190) * ((100vw - 768px) / (1280 - 768)));
+        height: calc(190px + (151 - 190) * ((100vw - 768px) / (1280 - 768)));
     }
 }
 
