@@ -15,7 +15,6 @@ function SearchForm({ isShort, setIsShort, searchQuery, setSearchQuery, searchFi
           <button className="form-search__button" type="button"></button>
         </div>
         <label className="form-search__label" >
-          <p className="form-search__label-text">Короткометражки</p>
           <input
             className="form-search__checkbox"
             type="checkbox"
@@ -25,6 +24,7 @@ function SearchForm({ isShort, setIsShort, searchQuery, setSearchQuery, searchFi
           <div className="form-search__custom-checkbox">
             <div className="form-search__custom-mark"></div>
           </div>
+          <p className="form-search__label-text">Короткометражки</p>
         </label>
       </form>
     </section>
