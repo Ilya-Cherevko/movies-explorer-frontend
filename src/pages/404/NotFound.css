@@ -23,9 +23,7 @@
 
 .page-404__return-button {
     font: inherit;
-    border: none;
-    background-color: transparent;
-    color: #4285f4;
+    color: #3456F3;
     padding: 5px 10px;
     cursor: pointer;
 }

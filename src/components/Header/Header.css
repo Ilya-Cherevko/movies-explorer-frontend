@@ -27,12 +27,12 @@
     line-height: 16px;
     font-weight: 500;
     padding: 8px 20px;
-    color: #FFFFFF;
+    color: #000000;
 }
 
-.header__button_color_green {
-    color: #000000;
-    background-color: #2BE080;
+.header__button_color_blue {
+    color: #FFFFFF;
+    background-color: #3456F3;
     border-radius: 3px;
 }
 

@@ -47,9 +47,9 @@
     margin-bottom: 14px;
 }
 
-.project__progress-bar_color_green {
-    color: #000000;
-    background-color: #2BE080;
+.project__progress-bar_color_blue {
+    color: #FFFFFF;
+    background-color: #3456F3;
 }
 
 .project__progress-title {

@@ -17,7 +17,7 @@ function AboutProject() {
         </div>
         <div className="project__progress">
           <div className="project__progress-column">
-            <div className="project__progress-bar project__progress-bar_color_green">1 неделя</div>
+            <div className="project__progress-bar project__progress-bar_color_blue">1 неделя</div>
             <p className="project__progress-title">Back-end</p>
           </div>
           <div className="project__progress-column">

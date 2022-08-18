@@ -1,9 +1,15 @@
 .card-film {
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
 }
 
 .card-film__image {
-    height: 151px;
+    height: 200px;
 }
 
 .card-film__description {
@@ -12,36 +18,36 @@
 
 .card-film__row {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 30px;
-    padding-bottom: 29px;
-    margin-top: 7px;
-    margin-bottom: 7px;
-    border-bottom: 1px solid #E8E8E8;
+    align-items: center;
+    height: 18px;
+    padding: 0 18px;
+    margin: 18px 0;
+    width: 100%;
 }
 
 .card-film__name {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
 }
 
 .card-film__like-button {
-    width: 30px;
-    height: 30px;
-    background-image: url("../../images/icons/heart-icon.svg");
+    width: 100px;
+    height: 29px;
+    background-image: url("../../images/icons/check-icon.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin: 18px auto;
 }
 
 .card-film__like-button_active {
-    background-image: url("../../images/icons/heart-active-icon.svg");
+    background-image: url("../../images/icons/check-icon_active.svg");
 }
 
 .card-film__duration {
     font-size: 11px;
-    color: #8b8b8b;
+    color: #A0A0A0;
 }
 
 .saved .card-film {
@@ -56,28 +62,36 @@
     display: block;
     width: 30px;
     height: 30px;
-    background-image: url("../../images/icons/delete-icon.svg");
+    background-image: url("../../images/icons/check-icon_delete.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-@media screen and (max-width: 1280px) {
-    .card-film__image {
-        height: calc(190px + (151 - 190) * ((100vw - 768px) / (1280 - 768)));
-    }
-}
-
 @media screen and (max-width: 768px) {
     .card-film__image {
-        height: calc(168px + (190 - 168) * ((100vw - 320px) / (768 - 320)));
+        height: 190px;
     }
 
     .card-film__name {
-        font-size: calc(12px + (13 - 12) * ((100vw - 320px) / (768 - 320)));
+        font-size: 15px;
     }
 
     .card-film__duration {
-        font-size: calc(10px + (11 - 10) * ((100vw - 320px) / (768 - 320)));
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card-film__image {
+        height: 168px;
+    }
+
+    .card-film__name {
+        font-size: 12px;
+    }
+
+    .card-film__duration {
+        font-size: 10px;
     }
 }

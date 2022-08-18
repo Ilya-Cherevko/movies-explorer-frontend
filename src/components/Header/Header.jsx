@@ -15,14 +15,14 @@ function Header() {
   ) : (
     <div className="header__buttons">
       <Link className="header__button" to='/signup'>Регистрация</Link>
-      <Link className="header__button header__button_color_green" to='/signin'>Войти</Link>
+      <Link className="header__button header__button_color_blue" to='/signin'>Войти</Link>
     </div>
   )
 
   return (
     <header
       className="header"
-      style={{ backgroundColor: isMainPage && '#073042' }}
+      style={{ backgroundColor: isMainPage && '#FAFAFA' }}
     >
       <div className="container header__container">
         <div className="header__wrapper">
