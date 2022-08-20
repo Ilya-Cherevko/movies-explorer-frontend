@@ -12,7 +12,7 @@ function AboutMe() {
             <p className="about-me__name">Илья</p>
             <p className="about-me__speciality">Фронтенд-разработчик, 48 лет</p>
             <p className="about-me__text">Я из Самары, у меня два высших образования. Женат, двое детей.
-              Работаю дизайнером и верстальщиком. Пошёл на курс веб разработки что бы верстать сайты.
+              Работаю дизайнером и верстальщиком. Пошёл на курс веб разработки чтобы верстать сайты.
             </p>
             <ul className="about-me__links">
               <li><a className="about-me__link" href="https://vk.com/id266103558" target="_blank">BK</a></li>

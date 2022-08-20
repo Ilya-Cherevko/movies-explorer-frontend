@@ -11,8 +11,9 @@ function SearchForm({ isShort, setIsShort, searchQuery, setSearchQuery, searchFi
             placeholder='Фильм'
             value={searchQuery}
             onInput={e => setSearchQuery(e.target.value)}
+            required
           />
-          <button className="form-search__button" type="button"></button>
+          <button className="form-search__button" type="submit"></button>
         </div>
         <label className="form-search__label" >
           <input

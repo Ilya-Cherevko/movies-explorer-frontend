@@ -25,7 +25,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 22px 22px 90px;
-    background-color: #202020;
+    background-color: #fafafa;
     max-width: 520px;
     width: 100%;
     margin-bottom: auto;
@@ -71,7 +71,7 @@
     right: 0;
     bottom: 0;
     height: 2px;
-    background-color: #fff;
+    background-color: #000000;
 }
 
 @media screen and (max-width: 768px) {
