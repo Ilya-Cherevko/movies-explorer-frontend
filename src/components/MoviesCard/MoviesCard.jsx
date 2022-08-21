@@ -17,6 +17,7 @@ function MoviesCard() {
           src={photoCard}
           alt="Фильм"
         />
+          <div className="card-film__like-button-container">
             <button
             className={
               isFavofiteFilm
@@ -24,8 +25,8 @@ function MoviesCard() {
                 : "card-film__like-button"
             }
             type="button"
-          ></button>
-      
+            ></button>
+          </div>
     </li >
   );
 }

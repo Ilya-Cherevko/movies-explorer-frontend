@@ -45,6 +45,14 @@
     background-image: url("../../images/icons/check-icon_active.svg");
 }
 
+.card-film__like-button-container {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 29px;
+    margin: 18px auto;
+}
+
 .card-film__duration {
     font-size: 11px;
     color: #A0A0A0;
@@ -55,7 +63,8 @@
 }
 
 .saved .card-film .card-film__like-button {
-    display: none;
+    display: block;
+    background-image: url("../../images/icons/check-icon_delete.svg");
 }
 
 .saved .card-film:hover .card-film__like-button {
