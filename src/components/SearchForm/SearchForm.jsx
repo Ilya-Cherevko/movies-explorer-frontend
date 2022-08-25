@@ -18,7 +18,7 @@ function SearchForm({ searchFilms, searchQueryLocal }) {
 
     setValues(searchQuery)
     if (searchQuery) setIsValid(true)
-  }, [])
+  }, [searchQueryLocal, setIsValid, setValues])
 
   // Поиск фильмов при изменении состояния чекбокса
   function onChangeCheckbox(evt) {

@@ -1,0 +1,106 @@
+.card-film {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+}
+
+.card-film__image {
+    height: 200px;
+}
+
+.card-film__description {
+    padding: 14px;
+}
+
+.card-film__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 18px;
+    padding: 0 18px;
+    margin: 18px 0;
+    width: 100%;
+}
+
+.card-film__name {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.card-film__like-button {
+    width: 100px;
+    height: 29px;
+    background-image: url("../../images/icons/check-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 18px auto;
+}
+
+.card-film__like-button_active {
+    background-image: url("../../images/icons/check-icon_active.svg");
+}
+
+.card-film__like-button-container {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 29px;
+    margin: 18px auto;
+}
+
+.card-film__duration {
+    font-size: 11px;
+    color: #A0A0A0;
+}
+
+.saved .card-film {
+    cursor: pointer;
+}
+
+.saved .card-film .card-film__like-button {
+    display: block;
+    background-image: url("../../images/icons/check-icon_delete.svg");
+}
+
+.saved .card-film:hover .card-film__like-button {
+    display: block;
+    width: 100px;
+    height: 29px;
+    background-image: url("../../images/icons/check-icon_delete.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .card-film__image {
+        height: 190px;
+    }
+
+    .card-film__name {
+        font-size: 15px;
+    }
+
+    .card-film__duration {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card-film__image {
+        height: 168px;
+    }
+
+    .card-film__name {
+        font-size: 12px;
+    }
+
+    .card-film__duration {
+        font-size: 10px;
+    }
+}

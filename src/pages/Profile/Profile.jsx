@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import './Profile.css';
 
 import HeaderLayout from "../../layouts/HeaderLayout/HeaderLayout";
@@ -24,7 +24,7 @@ function Profile({ handleUpdateUser, currentUser, handleSignOut, setIsShowMenu }
     isValidName && isValidEmail && (isChangeName || isChangeEmail)
       ? setIsValid(true)
       : setIsValid(false)
-  }, [values])
+  }, [currentUser.email, currentUser.name, setIsValid, values])
 
   function clickUpdateButton() {
     handleUpdateUser(values)

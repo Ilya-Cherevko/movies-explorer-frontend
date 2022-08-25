@@ -14,7 +14,7 @@ function MoviesCard({ film, handleClickLikeButton }) {
   useEffect(() => {
     const filmId = film._id
     if (filmId) setFilmId(filmId)
-  }, [])
+  }, [film._id])
 
   function clickLikeButton() {
     if (isSavedMovies) {
@@ -49,7 +49,7 @@ function MoviesCard({ film, handleClickLikeButton }) {
           <p className="card-film__name">{film.nameRU}</p>
           <p className="card-film__duration">{formatDuration(film.duration)}</p>
         </div>
-        <a className='card-film__trailer-link' href={film.trailerLink} target="_blank">
+        <a className='card-film__trailer-link' href={film.trailerLink} target="_blank" rel="noreferrer">
         <img
           className="card-film__image"
           src={imageUrl}

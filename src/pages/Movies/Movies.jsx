@@ -4,7 +4,7 @@ import SearchForm from '../../components/SearchForm/SearchForm';
 import MoviesCardList from '../../components/MoviesCardList/MoviesCardList';
 import HeaderAndFooterLayout from '../../layouts/HeaderAndFooterLayout/HeaderAndFooterLayout';
 
-import { filterFilms } from '../../utils/filterFilms'
+import { filterFilms } from '../../utils/FilterFilms'
 import { formatLikedFilms, setLike } from '../../utils/likes'
 import { MESSAGES, CARD_COUNT, CARD_BRAKEPOINT, SHORT_DURATION } from '../../utils/constants'
 import { useCardCount } from '../../hooks/useCardCount'
@@ -23,29 +23,29 @@ function Movies({ requestAllFilms, requestLikeFilms, handleClickLikeButton, setI
   const { countAddFilms, startCountFilms, setParamsCountFilms } = useCardCount(CARD_COUNT, CARD_BRAKEPOINT)
 
   useEffect(() => {
-    getLikeFilms()
-    setCountViewFilms()
-    addResizeEvent()
-    return () => removeResizeEvent()
-  }, [])
+    setParamsCountFilms('all')
+    window.addEventListener('resize', setParamsCountFilms)
+    return () => window.removeEventListener('resize', setParamsCountFilms)
+  }, [setParamsCountFilms])
 
   // Загрузить фильмы с локального хранилища
   useEffect(() => {
     if (likedFilms && !isLoading) {
-      loadFilmsLocal()
+      const localFilms = filmsLocal.load()
+      setFiltredFilms(localFilms)
     }
-  }, [likedFilms, isLoading])
+  }, [likedFilms, isLoading, filmsLocal])
 
   // Отфильтровать фильмы
   useEffect(() => {
     if (allFilms?.length && queryValues) {
       const films = filterFilms(allFilms, SHORT_DURATION, queryValues)
-      saveFilmsLocal(films)
+      filmsLocal.save(films)
       setFiltredFilms(films)
 
       films?.length ? hideErrorMessage() : showErrorMessage(MESSAGES.NOT_FOUND)
     }
-  }, [allFilms, queryValues])
+  }, [allFilms, filmsLocal, queryValues])
 
   // Отобразить фильмы
   useEffect(() => {
@@ -53,9 +53,9 @@ function Movies({ requestAllFilms, requestLikeFilms, handleClickLikeButton, setI
       const films = setLike(filtredFilms, likedFilms)
       setDisplayedFilms([...films.slice(0, startCountFilms)])
     }
-  }, [filtredFilms, startCountFilms])
+  }, [filtredFilms, likedFilms, startCountFilms])
 
-  function getLikeFilms() {
+  useEffect(function getLikeFilms(){
     startLoader()
     requestLikeFilms()
       .then(films => {
@@ -68,7 +68,7 @@ function Movies({ requestAllFilms, requestLikeFilms, handleClickLikeButton, setI
       .finally(() => {
         stopLoader()
       })
-  }
+  }, [requestLikeFilms])
 
   function getAllFilms() {
     startLoader()
@@ -103,27 +103,6 @@ function Movies({ requestAllFilms, requestLikeFilms, handleClickLikeButton, setI
     const endIndex = startIndex + countAddFilms
 
     setDisplayedFilms([...displayedFilms, ...filtredFilms.slice(startIndex, endIndex)])
-  }
-
-  function saveFilmsLocal(films) {
-    filmsLocal.save(films)
-  }
-
-  function loadFilmsLocal() {
-    const localFilms = filmsLocal.load()
-    setFiltredFilms(localFilms)
-  }
-
-  function addResizeEvent() {
-    window.addEventListener('resize', setParamsCountFilms)
-  }
-
-  function removeResizeEvent() {
-    window.removeEventListener('resize', setParamsCountFilms)
-  }
-
-  function setCountViewFilms() {
-    setParamsCountFilms('all')
   }
 
   function showErrorMessage(message) {
