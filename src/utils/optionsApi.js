@@ -1,5 +1,5 @@
 export const optionsMainApi = {
-    baseUrl: 'https://api.titanikum.nomoredomains.sbs/', //'http://localhost:3001'
+    baseUrl: 'https://api.titanikum.nomoredomains.sbs', //'http://localhost:3001'
     headers: {
         'Content-Type': 'application/json'
     }
