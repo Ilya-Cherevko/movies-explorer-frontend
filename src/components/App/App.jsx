@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Route, Switch, useHistory, useLocation } from "react-router-dom";
-
 import './App.css';
-
 import Movies from '../../pages/Movies/Movies'
 import Profile from '../../pages/Profile/Profile'
 import Register from '../../pages/Register/Register'
@@ -12,7 +10,6 @@ import Main from '../../pages/Main/Main'
 import NotFound from '../../pages/404/NotFound'
 import Menu from "../Menu/Menu";
 import Alert from "../Alert/Alert";
-
 import ProtectedRoute from "../../hocs/ProtectedRoute";
 import { AppStateContext } from '../../contexts/AppStateContext'
 import MainApi from "../../utils/MainApi";

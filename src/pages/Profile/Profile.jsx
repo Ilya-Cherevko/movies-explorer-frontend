@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import './Profile.css';
-
 import HeaderLayout from "../../layouts/HeaderLayout/HeaderLayout";
-
 import { useFormWithValidation } from '../../hooks/useFormWithValidation'
 import { VALIDATION_PARAMS } from '../../utils/constants'
 

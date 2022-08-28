@@ -1,12 +1,9 @@
 import { useFormWithValidation } from '../../hooks/useFormWithValidation'
-
 import './Register.css';
-
 import Label from "../../components/Label/Label";
 import AuthButton from "../../components/AuthButton/AuthButton";
 import ErrorText from "../../components/ErrorText/ErrorText";
 import AuthLayout from '../../layouts/AuthLayout/AuthLayout';
-
 import { VALIDATION_CONFIGS } from '../../utils/constants'
 
 function Register({ handleRegister }) {

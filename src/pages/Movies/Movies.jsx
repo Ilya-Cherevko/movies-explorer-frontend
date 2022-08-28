@@ -3,7 +3,6 @@ import './Movies.css';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import MoviesCardList from '../../components/MoviesCardList/MoviesCardList';
 import HeaderAndFooterLayout from '../../layouts/HeaderAndFooterLayout/HeaderAndFooterLayout';
-
 import { filterFilms } from '../../utils/FilterFilms'
 import { formatLikedFilms, setLike } from '../../utils/likes'
 import { MESSAGES, CARD_COUNT, CARD_BRAKEPOINT, SHORT_DURATION } from '../../utils/constants'

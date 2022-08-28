@@ -1,9 +1,6 @@
 import { NavLink } from 'react-router-dom';
-
 import './Menu.css';
-
 import ProfileButton from '../ProfileButton/ProfileButton';
-
 import { PAGES } from '../../utils/constants'
 
 function Menu({ isShowMenu, setIsShowMenu }) {

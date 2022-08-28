@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
-
 import './SearchForm.css';
-
 import ErrorText from "../../components/ErrorText/ErrorText";
-
 import { useFormWithValidation } from '../../hooks/useFormWithValidation'
 
 function SearchForm({ searchFilms, searchQueryLocal }) {

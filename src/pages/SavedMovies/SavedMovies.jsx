@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
-
 import './SavedMovies.css';
-
 import SearchForm from '../../components/SearchForm/SearchForm';
 import MoviesCardList from '../../components/MoviesCardList/MoviesCardList';
 import HeaderAndFooterLayout from '../../layouts/HeaderAndFooterLayout/HeaderAndFooterLayout';
-
 import { filterFilms } from '../../utils/FilterFilms'
 import { MESSAGES, SHORT_DURATION } from '../../utils/constants'
 

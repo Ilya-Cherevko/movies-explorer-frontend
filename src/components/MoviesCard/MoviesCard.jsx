@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
-
 import './MoviesCard.css';
-
 import { formatDuration } from '../../utils/formatDuration'
 import { BASE_URL, PAGES } from '../../utils/constants'
 

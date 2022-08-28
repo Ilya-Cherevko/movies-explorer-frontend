@@ -1,10 +1,7 @@
 import { useContext } from "react";
 import { useHistory, Link } from "react-router-dom";
-
 import './AuthButton.css';
-
 import ErrorText from "../../components/ErrorText/ErrorText";
-
 import { AppStateContext } from '../../contexts/AppStateContext'
 import { PAGES } from '../../utils/constants'
 

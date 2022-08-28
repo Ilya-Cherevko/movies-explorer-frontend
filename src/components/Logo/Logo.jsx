@@ -1,9 +1,6 @@
 import { useHistory } from 'react-router-dom'
-
 import './Logo.css';
-
 import logo from '../../images/logo.svg'
-
 import { PAGES } from '../../utils/constants'
 
 function Logo() {

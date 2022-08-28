@@ -1,12 +1,9 @@
 import { useContext } from "react";
 import { useHistory, Link } from "react-router-dom";
-
 import './Header.css';
-
 import Logo from '../Logo/Logo'
 import Navigation from "../Navigation/Navigation";
 import ProfileButton from "../ProfileButton/ProfileButton";
-
 import { AppStateContext } from '../../contexts/AppStateContext'
 import { PAGES } from '../../utils/constants'
 

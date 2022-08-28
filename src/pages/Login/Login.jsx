@@ -3,7 +3,6 @@ import Label from "../../components/Label/Label";
 import AuthButton from "../../components/AuthButton/AuthButton";
 import ErrorText from "../../components/ErrorText/ErrorText";
 import AuthLayout from '../../layouts/AuthLayout/AuthLayout';
-
 import { useFormWithValidation } from '../../hooks/useFormWithValidation'
 import { VALIDATION_CONFIGS } from '../../utils/constants'
 
