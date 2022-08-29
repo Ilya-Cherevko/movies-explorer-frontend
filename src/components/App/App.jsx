@@ -25,7 +25,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({})
   // Токен
   const [token, setToken] = useState('')
-  // Лоадер кнопки Войти/Зарегестрироваться
+  // Лоадер кнопки Войти/Зарегистрироваться
   const [loaderButton, setLoaderButton] = useState(false)
   // Состояние входа в профиль
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -58,10 +58,13 @@ function App() {
 
   useEffect(() => {
     handleLoginToken()
+    console.log(token)
   }, [])
 
   // Запросить все фильмы
   function requestAllFilms() {
+    console.log('Фильмы с сайта', moviesApi)
+    console.log('фильмы из хранилища', mainApi)
     return moviesApi.getFilms()
   }
 
@@ -194,13 +197,13 @@ function App() {
             path={PAGES.MOVIES}
             exact
             isLoggedIn={isLoggedIn}
-            requestAllFilms={requestAllFilms}
             handleClickLikeButton={handleClickLikeButton}
             requestLikeFilms={requestLikeFilms}
             setIsShowMenu={setIsShowMenu}
             component={Movies}
             isPreloader={isPreloader}
             filmsLocal={filmsLocal}
+            requestAllFilms={requestAllFilms}
             searchQueryMoviesLocal={searchQueryMoviesLocal}
           />
 
@@ -209,11 +212,11 @@ function App() {
             exact
             isLoggedIn={isLoggedIn}
             handleClickLikeButton={handleClickLikeButton}
+            searchQuerySavedMoviesLocal={searchQuerySavedMoviesLocal}
             requestLikeFilms={requestLikeFilms}
             setIsShowMenu={setIsShowMenu}
             component={SavedMovies}
             isPreloader={isPreloader}
-            searchQuerySavedMoviesLocal={searchQuerySavedMoviesLocal}
           />
 
           <ProtectedRoute

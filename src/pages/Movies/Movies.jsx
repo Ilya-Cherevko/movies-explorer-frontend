@@ -32,6 +32,7 @@ function Movies({ requestAllFilms, requestLikeFilms, handleClickLikeButton, setI
     if (likedFilms && !isLoading) {
       const localFilms = filmsLocal.load()
       setFiltredFilms(localFilms)
+      console.log('Фильмы из хранилища', localFilms)
     }
   }, [likedFilms, isLoading, filmsLocal])
 
