@@ -60,6 +60,11 @@
     font-size: 13px;
 }
 
+.profile__button_disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
 .profile__button_color_pink {
     color: #EE3465;
     font-weight: 500;
