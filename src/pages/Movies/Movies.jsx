@@ -3,49 +3,52 @@ import './Movies.css';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import MoviesCardList from '../../components/MoviesCardList/MoviesCardList';
 import HeaderAndFooterLayout from '../../layouts/HeaderAndFooterLayout/HeaderAndFooterLayout';
-import { filterFilms } from '../../utils/FilterFilms'
+import { filterFilms } from '../../utils/filterfilms'
 import { formatLikedFilms, setLike } from '../../utils/likes'
 import { MESSAGES, CARD_COUNT, CARD_BRAKEPOINT, SHORT_DURATION } from '../../utils/constants'
 import { useCardCount } from '../../hooks/useCardCount'
 
-function Movies({ requestAllFilms, requestLikeFilms, handleClickLikeButton, setIsShowMenu, filmsLocal, searchQueryMoviesLocal }) {
+function Movies({ 
+  requestAllFilms, 
+  requestLikeFilms, 
+  handleClickLikeButton, 
+  setIsShowMenu, 
+  filmsLocal, 
+  searchQueryMoviesLocal }) {
 
   // Фильмы
   const [allFilms, setAllFilms] = useState(null)
   const [likedFilms, setLikedFilms] = useState(null)
   const [filtredFilms, setFiltredFilms] = useState(null)
   const [displayedFilms, setDisplayedFilms] = useState(null)
-
   const [errorMessage, setErrorMessage] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [queryValues, setQueryValues] = useState(null)
   const { countAddFilms, startCountFilms, setParamsCountFilms } = useCardCount(CARD_COUNT, CARD_BRAKEPOINT)
-
   useEffect(() => {
-    setParamsCountFilms('all')
-    window.addEventListener('resize', setParamsCountFilms)
-    return () => window.removeEventListener('resize', setParamsCountFilms)
-  }, [setParamsCountFilms])
+    getLikeFilms()
+    setCountViewFilms()
+    addResizeEvent()
+    return () => removeResizeEvent()
+  }, [])
 
   // Загрузить фильмы с локального хранилища
   useEffect(() => {
     if (likedFilms && !isLoading) {
-      const localFilms = filmsLocal.load()
-      setFiltredFilms(localFilms)
-      console.log('Фильмы из хранилища', localFilms)
+      loadFilmsLocal()
     }
-  }, [likedFilms, isLoading, filmsLocal])
+  }, [likedFilms, isLoading])
 
   // Отфильтровать фильмы
   useEffect(() => {
     if (allFilms?.length && queryValues) {
       const films = filterFilms(allFilms, SHORT_DURATION, queryValues)
-      filmsLocal.save(films)
+      saveFilmsLocal(films)
       setFiltredFilms(films)
 
       films?.length ? hideErrorMessage() : showErrorMessage(MESSAGES.NOT_FOUND)
     }
-  }, [allFilms, filmsLocal, queryValues])
+  }, [allFilms, queryValues])
 
   // Отобразить фильмы
   useEffect(() => {
@@ -53,9 +56,9 @@ function Movies({ requestAllFilms, requestLikeFilms, handleClickLikeButton, setI
       const films = setLike(filtredFilms, likedFilms)
       setDisplayedFilms([...films.slice(0, startCountFilms)])
     }
-  }, [filtredFilms, likedFilms, startCountFilms])
+  }, [filtredFilms, startCountFilms])
 
-  useEffect(function getLikeFilms(){
+  function getLikeFilms() {
     startLoader()
     requestLikeFilms()
       .then(films => {
@@ -68,7 +71,7 @@ function Movies({ requestAllFilms, requestLikeFilms, handleClickLikeButton, setI
       .finally(() => {
         stopLoader()
       })
-  }, [requestLikeFilms])
+  }
 
   function getAllFilms() {
     startLoader()
@@ -103,6 +106,27 @@ function Movies({ requestAllFilms, requestLikeFilms, handleClickLikeButton, setI
     const endIndex = startIndex + countAddFilms
 
     setDisplayedFilms([...displayedFilms, ...filtredFilms.slice(startIndex, endIndex)])
+  }
+
+  function saveFilmsLocal(films) {
+    filmsLocal.save(films)
+  }
+
+  function loadFilmsLocal() {
+    const localFilms = filmsLocal.load()
+    setFiltredFilms(localFilms)
+  }
+
+  function addResizeEvent() {
+    window.addEventListener('resize', setParamsCountFilms)
+  }
+
+  function removeResizeEvent() {
+    window.removeEventListener('resize', setParamsCountFilms)
+  }
+
+  function setCountViewFilms() {
+    setParamsCountFilms('all')
   }
 
   function showErrorMessage(message) {

@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
+
 import './SavedMovies.css';
+
 import SearchForm from '../../components/SearchForm/SearchForm';
 import MoviesCardList from '../../components/MoviesCardList/MoviesCardList';
 import HeaderAndFooterLayout from '../../layouts/HeaderAndFooterLayout/HeaderAndFooterLayout';
-import { filterFilms } from '../../utils/FilterFilms'
+
+import { filterFilms } from '../../utils/filterfilms'
 import { MESSAGES, SHORT_DURATION } from '../../utils/constants'
 
 function SavedMovies({ requestLikeFilms, handleClickLikeButton, setIsShowMenu, searchQuerySavedMoviesLocal }) {
@@ -13,22 +16,24 @@ function SavedMovies({ requestLikeFilms, handleClickLikeButton, setIsShowMenu, s
   const [errorMessage, setErrorMessage] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(function getLikeFilms(){
-      startLoader()
-      requestLikeFilms()
-        .then(films => {
-          setAllFilms(films)
-          hideErrorMessage()
-        })
-        .catch(() => {
-          showErrorMessage(MESSAGES.ERROR)
-        })
-        .finally(() => {
-          stopLoader()
-        })
-  }, [requestLikeFilms])
+  useEffect(() => {
+    getLikeFilms()
+  }, [])
 
-  
+  function getLikeFilms() {
+    startLoader()
+    requestLikeFilms()
+      .then(films => {
+        setAllFilms(films)
+        hideErrorMessage()
+      })
+      .catch(() => {
+        showErrorMessage(MESSAGES.ERROR)
+      })
+      .finally(() => {
+        stopLoader()
+      })
+  }
 
   function searchFilms(values) {
     const films = filterFilms(likedFilms, SHORT_DURATION, values)

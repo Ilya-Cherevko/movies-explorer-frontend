@@ -29,6 +29,7 @@ function App() {
   const [loaderButton, setLoaderButton] = useState(false)
   // Состояние входа в профиль
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
   // Состояние ответа сервера
   const [isFetchError, setIsFetchError] = useState(false)
 
@@ -46,6 +47,9 @@ function App() {
   const filmsLocal = new LocalStorage('films')
   const searchQueryMoviesLocal = new LocalStorage('search-query-movies', { film: '', short: false })
   const searchQuerySavedMoviesLocal = new LocalStorage('search-query-saved-movies', { film: '', short: false })
+  const setIsOneDownload = useState(false)
+
+  console.log('Переключатель загрузки для одного раза', setIsOneDownload)
 
   useEffect(() => {
     document.body.style.overflow = isShowMenu ? 'hidden' : ''
@@ -58,15 +62,18 @@ function App() {
 
   useEffect(() => {
     handleLoginToken()
-    console.log(token)
   }, [])
 
-  // Запросить все фильмы
-  function requestAllFilms() {
-    console.log('Фильмы с сайта', moviesApi)
-    console.log('фильмы из хранилища', mainApi)
+  function ret(){
     return moviesApi.getFilms()
   }
+  // Запросить все фильмы
+  function requestAllFilms() {
+    ret()
+    setIsOneDownload(true)
+  }
+
+  
 
   // Регистрация
   function handleRegister({ name, email, password }) {
@@ -204,6 +211,7 @@ function App() {
             isPreloader={isPreloader}
             filmsLocal={filmsLocal}
             requestAllFilms={requestAllFilms}
+            // requestAllFilmsLocal={requestAllFilmsLocal}
             searchQueryMoviesLocal={searchQueryMoviesLocal}
           />
 
