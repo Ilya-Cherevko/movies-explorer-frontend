@@ -25,6 +25,7 @@ function Movies({
   const [isLoading, setIsLoading] = useState(false)
   const [queryValues, setQueryValues] = useState(null)
   const { countAddFilms, startCountFilms, setParamsCountFilms } = useCardCount(CARD_COUNT, CARD_BRAKEPOINT)
+
   useEffect(() => {
     getLikeFilms()
     setCountViewFilms()
@@ -35,20 +36,38 @@ function Movies({
   // Загрузить фильмы с локального хранилища
   useEffect(() => {
     if (likedFilms && !isLoading) {
-      loadFilmsLocal()
+      const localFilms = filmsLocal.load()
+      setFiltredFilms(localFilms)
+      console.log('Посмотрим фильмы из локального хранилища', localFilms)
     }
-  }, [likedFilms, isLoading])
+  }, [likedFilms, isLoading, filmsLocal])
+
+  function getAllFilms() {
+    startLoader()
+    requestAllFilms()
+      .then(films => {
+        setAllFilms(films)
+        hideErrorMessage()
+        console.log('Посмотрим фильмы', films)
+      })
+      .catch(() => {
+        showErrorMessage(MESSAGES.ERROR)
+      })
+      .finally(() => {
+        stopLoader()
+      })
+  }
 
   // Отфильтровать фильмы
   useEffect(() => {
     if (allFilms?.length && queryValues) {
       const films = filterFilms(allFilms, SHORT_DURATION, queryValues)
-      saveFilmsLocal(films)
+      filmsLocal.save(films)
       setFiltredFilms(films)
 
       films?.length ? hideErrorMessage() : showErrorMessage(MESSAGES.NOT_FOUND)
     }
-  }, [allFilms, queryValues])
+  }, [allFilms, filmsLocal, queryValues])
 
   // Отобразить фильмы
   useEffect(() => {
@@ -56,7 +75,7 @@ function Movies({
       const films = setLike(filtredFilms, likedFilms)
       setDisplayedFilms([...films.slice(0, startCountFilms)])
     }
-  }, [filtredFilms, startCountFilms])
+  }, [filtredFilms, likedFilms, startCountFilms])
 
   function getLikeFilms() {
     startLoader()
@@ -73,23 +92,18 @@ function Movies({
       })
   }
 
-  function getAllFilms() {
-    startLoader()
-    requestAllFilms()
-      .then(films => {
-        setAllFilms(films)
-        hideErrorMessage()
-      })
-      .catch(() => {
-        showErrorMessage(MESSAGES.ERROR)
-      })
-      .finally(() => {
-        stopLoader()
-      })
-  }
+  // Засада здесь
+  // function searchFilms(values) {
+  //   if (!allFilms?.length) getAllFilms()
+  //   setQueryValues(values)
+  // }
 
   function searchFilms(values) {
-    if (!allFilms?.length) getAllFilms()
+    if (!allFilms?.length) {
+      getAllFilms()
+    }else{
+      loadFilmsLocal()
+    }
     setQueryValues(values)
   }
 
@@ -108,9 +122,9 @@ function Movies({
     setDisplayedFilms([...displayedFilms, ...filtredFilms.slice(startIndex, endIndex)])
   }
 
-  function saveFilmsLocal(films) {
-    filmsLocal.save(films)
-  }
+  // function saveFilmsLocal(films) {
+  //   filmsLocal.save(films)
+  // }
 
   function loadFilmsLocal() {
     const localFilms = filmsLocal.load()

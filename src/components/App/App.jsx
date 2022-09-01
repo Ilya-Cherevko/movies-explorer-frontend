@@ -64,16 +64,10 @@ function App() {
     handleLoginToken()
   }, [])
 
-  function ret(){
+  // Получениефильмов с beatfilms
+  function requestAllFilms(){
     return moviesApi.getFilms()
-  }
-  // Запросить все фильмы
-  function requestAllFilms() {
-    ret()
-    setIsOneDownload(true)
-  }
-
-  
+  }  
 
   // Регистрация
   function handleRegister({ name, email, password }) {

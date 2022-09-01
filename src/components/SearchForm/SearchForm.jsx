@@ -5,7 +5,6 @@ import { useFormWithValidation } from '../../hooks/useFormWithValidation'
 
 function SearchForm({ searchFilms, searchQueryLocal }) {
   const startValue = { film: '', short: false }
-
   const { values, isValid, handleChange, setValues, setIsValid } = useFormWithValidation(startValue)
   // Состояние ошибки поиска 
   const [isSearchError, setIsSearchError] = useState(false)
