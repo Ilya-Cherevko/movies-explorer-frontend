@@ -47,7 +47,7 @@ function App() {
   const filmsLocal = new LocalStorage('films')
   const searchQueryMoviesLocal = new LocalStorage('search-query-movies', { film: '', short: false })
   const searchQuerySavedMoviesLocal = new LocalStorage('search-query-saved-movies', { film: '', short: false })
-
+  
   useEffect(() => {
     document.body.style.overflow = isShowMenu ? 'hidden' : ''
   }, [isShowMenu])
@@ -64,6 +64,10 @@ function App() {
   // Получение фильмов с beatfilms
   function requestAllFilms(){
     return moviesApi.getFilms()
+  }
+
+  function requestAllFilmsLocal(){
+    return mainApi.getFilmsLocal(token)
   }
 
   // Регистрация
@@ -203,6 +207,7 @@ function App() {
             isPreloader={isPreloader}
             filmsLocal={filmsLocal}
             requestAllFilms={requestAllFilms}
+            requestAllFilmsLocal={requestAllFilmsLocal}
             searchQueryMoviesLocal={searchQueryMoviesLocal}
           />
 

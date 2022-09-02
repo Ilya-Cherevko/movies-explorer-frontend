@@ -52,4 +52,8 @@ export default class MainApi {
     deleteLikeFilm(filmId, token) {
         return this._fetch(`/movies/${filmId}`, 'DELETE', null, token)
     }
+
+    getFilmsLocal(token) {
+        return this._fetch('/movies', 'GET', null, token)
+    }
 }

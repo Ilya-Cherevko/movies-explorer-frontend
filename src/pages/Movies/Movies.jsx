@@ -9,12 +9,12 @@ import { MESSAGES, CARD_COUNT, CARD_BRAKEPOINT, SHORT_DURATION } from '../../uti
 import { useCardCount } from '../../hooks/useCardCount'
 
 function Movies({ 
-  requestAllFilms, 
+  requestAllFilms,
   requestAllFilmsLocal,
-  requestLikeFilms, 
-  handleClickLikeButton, 
-  setIsShowMenu, 
-  filmsLocal, 
+  requestLikeFilms,
+  handleClickLikeButton,
+  setIsShowMenu,
+  filmsLocal,
   searchQueryMoviesLocal }) {
 
   // Фильмы
@@ -44,6 +44,22 @@ function Movies({
   function getAllFilms() {
     startLoader()
     requestAllFilms()
+      .then(films => {
+        setAllFilms(films)
+        hideErrorMessage()
+        console.log('Загруженные фильмы', films)
+      })
+      .catch(() => {
+        showErrorMessage(MESSAGES.ERROR)
+      })
+      .finally(() => {
+        stopLoader()
+      })
+  }
+
+  function getAllFilmsLocal() {
+    startLoader()
+    requestAllFilmsLocal()
       .then(films => {
         setAllFilms(films)
         hideErrorMessage()
@@ -97,10 +113,10 @@ function Movies({
   }*/
 
   function searchFilms(values) {
-    if (!allFilms?.length) {
+    if (!allFilms?.length && !isLoading) {
       getAllFilms()
     }else {  
-      loadFilmsLocal()
+      getAllFilmsLocal()
     }
     setQueryValues(values)
   }
