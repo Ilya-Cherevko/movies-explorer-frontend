@@ -23,6 +23,7 @@ function SearchForm({ searchFilms, searchQueryLocal }) {
     handleChange(evt)
     searchFilms(newValues)
     searchQueryLocal.save(newValues)
+    //console.log(searchQueryLocal.save(newValues))
   }
 
   function handleSubmitForm(evt) {

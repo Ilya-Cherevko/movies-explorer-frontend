@@ -47,9 +47,6 @@ function App() {
   const filmsLocal = new LocalStorage('films')
   const searchQueryMoviesLocal = new LocalStorage('search-query-movies', { film: '', short: false })
   const searchQuerySavedMoviesLocal = new LocalStorage('search-query-saved-movies', { film: '', short: false })
-  const setIsOneDownload = useState(false)
-
-  console.log('Переключатель загрузки для одного раза', setIsOneDownload)
 
   useEffect(() => {
     document.body.style.overflow = isShowMenu ? 'hidden' : ''
@@ -64,10 +61,15 @@ function App() {
     handleLoginToken()
   }, [])
 
-  // Получениефильмов с beatfilms
+  // Получение фильмов с beatfilms
   function requestAllFilms(){
     return moviesApi.getFilms()
   }  
+
+  // Получение фильмов с titanikum
+  function requestAllFilmsLocal(){
+    return mainApi.getFilms()
+  } 
 
   // Регистрация
   function handleRegister({ name, email, password }) {
@@ -126,6 +128,7 @@ function App() {
   function handleUpdateUser(user) {
     return mainApi.updateUserInfo(user, token)
       .then(newData => {
+        console.log(mainApi)
         setCurrentUser(newData)
         showAlert(ALERT_MESSAGES.SUCCESSFULLY.UPDATE_PROFILE)
       })
@@ -205,7 +208,7 @@ function App() {
             isPreloader={isPreloader}
             filmsLocal={filmsLocal}
             requestAllFilms={requestAllFilms}
-            // requestAllFilmsLocal={requestAllFilmsLocal}
+            requestAllFilmsLocal={requestAllFilmsLocal}
             searchQueryMoviesLocal={searchQueryMoviesLocal}
           />
 
