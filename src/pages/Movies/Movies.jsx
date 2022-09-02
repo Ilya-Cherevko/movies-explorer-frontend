@@ -45,6 +45,7 @@ function Movies({
     startLoader()
     requestAllFilms()
       .then(films => {
+        console.log('Фильмы', films)
         setAllFilms(films)
         hideErrorMessage()
         console.log('Загруженные фильмы', films)
