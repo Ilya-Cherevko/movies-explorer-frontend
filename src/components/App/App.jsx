@@ -64,12 +64,7 @@ function App() {
   // Получение фильмов с beatfilms
   function requestAllFilms(){
     return moviesApi.getFilms()
-  }  
-
-  // Получение фильмов с titanikum
-  function requestAllFilmsLocal(){
-    return mainApi.getFilms()
-  } 
+  }
 
   // Регистрация
   function handleRegister({ name, email, password }) {
@@ -208,7 +203,6 @@ function App() {
             isPreloader={isPreloader}
             filmsLocal={filmsLocal}
             requestAllFilms={requestAllFilms}
-            requestAllFilmsLocal={requestAllFilmsLocal}
             searchQueryMoviesLocal={searchQueryMoviesLocal}
           />
 

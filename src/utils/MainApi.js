@@ -52,16 +52,4 @@ export default class MainApi {
     deleteLikeFilm(filmId, token) {
         return this._fetch(`/movies/${filmId}`, 'DELETE', null, token)
     }
-    
-    getFilms() {
-        return fetch(this._baseUrl, {
-            method: 'GET',
-            headers: this._headers,
-        })
-            .then(res => {
-                return res.ok
-                    ? res.json()
-                    : Promise.reject(`Ошибка: ${res.status}`)
-            })
-    }
 }

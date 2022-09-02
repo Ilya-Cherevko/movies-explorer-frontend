@@ -47,23 +47,7 @@ function Movies({
       .then(films => {
         setAllFilms(films)
         hideErrorMessage()
-        console.log('Посмотрим фильмы', films)
-      })
-      .catch(() => {
-        showErrorMessage(MESSAGES.ERROR)
-      })
-      .finally(() => {
-        stopLoader()
-      })
-  }
-
-  function getAllFilmsLocal() {
-    startLoader()
-    requestAllFilmsLocal()
-      .then(films => {
-        setAllFilms(films)
-        hideErrorMessage()
-        console.log('Посмотрим фильмы локально', films)
+        console.log('Загруженные фильмы', films)
       })
       .catch(() => {
         showErrorMessage(MESSAGES.ERROR)
@@ -113,10 +97,10 @@ function Movies({
   }*/
 
   function searchFilms(values) {
-    if (!allFilms?.length && !isLoading) {
+    if (!allFilms?.length) {
       getAllFilms()
-    }else if (likedFilms && !isLoading){  
-      getAllFilmsLocal()
+    }else {  
+      loadFilmsLocal()
     }
     setQueryValues(values)
   }
