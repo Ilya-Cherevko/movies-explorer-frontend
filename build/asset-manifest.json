@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.b00bee72.css",
-    "main.js": "/static/js/main.57e8bbb4.js",
+    "main.css": "/static/css/main.0bb39259.css",
+    "main.js": "/static/js/main.e08e3940.js",
     "static/media/Inter-Medium.woff": "/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
     "static/media/Inter-Regular.woff": "/static/media/Inter-Regular.8c206db99195777c6769.woff",
     "static/media/Inter-Medium.woff2": "/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
     "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
     "static/media/photo.jpg": "/static/media/photo.5325c2c92cfbbc4d8ee5.jpg",
-    "static/media/check-icon.svg": "/static/media/check-icon.7d3b4bc484fbf594a381.svg",
-    "static/media/logo.svg": "/static/media/logo.77ce58f926673f311e4b9c0dff7cba73.svg",
-    "static/media/search-button-icon.svg": "/static/media/search-button-icon.a3ae8c1587785ca9f45e.svg",
+    "static/media/check-icon.svg": "/static/media/check-icon.2284f92543d7100e428e.svg",
+    "static/media/logo.svg": "/static/media/logo.cc5dbad9120c55da91fac21529c44a99.svg",
+    "static/media/search-button-icon.svg": "/static/media/search-button-icon.9125943fc276514a1a5c.svg",
     "index.html": "/index.html",
-    "static/media/check-icon_delete.svg": "/static/media/check-icon_delete.2a628d74e2fffc519d12.svg",
-    "static/media/menu-button-icon.svg": "/static/media/menu-button-icon.fe889bf9813280b38b86.svg",
-    "static/media/close-button-icon.svg": "/static/media/close-button-icon.09da049275af48ed6340.svg",
-    "static/media/check-icon_active.svg": "/static/media/check-icon_active.1386ccbd7ffc222cabfe.svg",
-    "static/media/arrow-icon.svg": "/static/media/arrow-icon.623bd0b06b9cad34376c.svg",
-    "main.b00bee72.css.map": "/static/css/main.b00bee72.css.map",
-    "main.57e8bbb4.js.map": "/static/js/main.57e8bbb4.js.map"
+    "static/media/check-icon_delete.svg": "/static/media/check-icon_delete.55b3734f7f3efe9ac720.svg",
+    "static/media/menu-button-icon.svg": "/static/media/menu-button-icon.08035af1e508cd8cfed5.svg",
+    "static/media/close-button-icon.svg": "/static/media/close-button-icon.80dfd5bd01b8fe0a895e.svg",
+    "static/media/check-icon_active.svg": "/static/media/check-icon_active.4599f5d1b2f4b29678cf.svg",
+    "static/media/arrow-icon.svg": "/static/media/arrow-icon.59350a06e023067ad7e8.svg",
+    "main.0bb39259.css.map": "/static/css/main.0bb39259.css.map",
+    "main.e08e3940.js.map": "/static/js/main.e08e3940.js.map"
   },
   "entrypoints": [
-    "static/css/main.b00bee72.css",
-    "static/js/main.57e8bbb4.js"
+    "static/css/main.0bb39259.css",
+    "static/js/main.e08e3940.js"
   ]
 }

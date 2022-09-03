@@ -3,12 +3,13 @@ import './SavedMovies.css';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import MoviesCardList from '../../components/MoviesCardList/MoviesCardList';
 import HeaderAndFooterLayout from '../../layouts/HeaderAndFooterLayout/HeaderAndFooterLayout';
-import { filterFilms } from '../../utils/filterfilms'
+import { filterFilms } from '../../utils/filterFilms'
 import { MESSAGES, SHORT_DURATION } from '../../utils/constants'
 
 function SavedMovies({ requestLikeFilms, handleClickLikeButton, setIsShowMenu, searchQuerySavedMoviesLocal }) {
   const [likedFilms, setLikedFilms] = useState(null)
   const [displayedFilms, setDisplayedFilms] = useState(null)
+
   const [errorMessage, setErrorMessage] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
 

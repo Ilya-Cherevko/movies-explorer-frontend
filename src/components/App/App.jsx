@@ -25,11 +25,10 @@ function App() {
   const [currentUser, setCurrentUser] = useState({})
   // Токен
   const [token, setToken] = useState('')
-  // Лоадер кнопки Войти/Зарегистрироваться
+  // Лоадер кнопки Войти/Зарегестрироваться
   const [loaderButton, setLoaderButton] = useState(false)
   // Состояние входа в профиль
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
   // Состояние ответа сервера
   const [isFetchError, setIsFetchError] = useState(false)
 
@@ -47,7 +46,7 @@ function App() {
   const filmsLocal = new LocalStorage('films')
   const searchQueryMoviesLocal = new LocalStorage('search-query-movies', { film: '', short: false })
   const searchQuerySavedMoviesLocal = new LocalStorage('search-query-saved-movies', { film: '', short: false })
-  
+
   useEffect(() => {
     document.body.style.overflow = isShowMenu ? 'hidden' : ''
   }, [isShowMenu])
@@ -61,15 +60,15 @@ function App() {
     handleLoginToken()
   }, [])
 
-  // Получение фильмов с beatfilms
-  function requestAllFilms(){
+  // Запросить все фильмы
+  function requestAllFilms() {
     return moviesApi.getFilms()
   }
 
-  function requestAllFilmsLocal(){
+  function requestAllFilmsLocal() {
     return mainApi.getFilmsLocal(token)
   }
-
+  
   // Регистрация
   function handleRegister({ name, email, password }) {
     setLoaderButton(true)
@@ -107,7 +106,7 @@ function App() {
       })
   }
 
-  // Получить данные пользовотеля
+  // Получить данные пользователя
   function getUserInfo(token) {
     mainApi.getUserInfo(token)
       .then(user => {
@@ -127,7 +126,6 @@ function App() {
   function handleUpdateUser(user) {
     return mainApi.updateUserInfo(user, token)
       .then(newData => {
-        console.log(mainApi)
         setCurrentUser(newData)
         showAlert(ALERT_MESSAGES.SUCCESSFULLY.UPDATE_PROFILE)
       })
