@@ -1,0 +1,26 @@
+.label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.label__text {
+    font-size: 10px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.label__input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #000000;
+    background-color: #F4F4F4;
+}
+
+@media screen and (max-width: 475px) {
+    .label:last-of-type {
+        margin-bottom: auto;
+    }
+}

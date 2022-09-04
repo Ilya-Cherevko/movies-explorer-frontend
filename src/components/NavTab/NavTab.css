@@ -1,0 +1,32 @@
+.project-nav {
+    margin-top: -50px;
+}
+
+.project-nav__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 96px);
+    justify-content: center;
+    gap: 10px;
+}
+
+.project-nav__link {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    padding: 8px 0px;
+    color: #000000;
+    background-color: #E8E8E8;
+    border-radius: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .project-nav__list {
+        grid-template-columns: repeat(auto-fit, 82px);
+        column-gap: 6px;
+    }
+
+    .project-nav__link {
+        font-size: 10px;
+    }
+}

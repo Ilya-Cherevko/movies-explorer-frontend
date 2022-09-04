@@ -1,0 +1,22 @@
+.profile-button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 32px;
+    background: #F4F4F4;
+    border-radius: 20px
+}
+
+.profile-button__link {
+    text-align: center;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    .header .profile-button {
+        display: none;
+    }
+}
